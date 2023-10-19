@@ -65,6 +65,20 @@ What are the Commit-message types?
 - chore (updating grunt tasks etc; no production code change)
 - wip (work in progress commit to be squashed — do not push!)
 
+## pre-commit
+
+  <https://pre-commit.com/>
+
+  A framework for managing and maintaining multi-language pre-commit hooks.
+
+  <https://interrupt.memfault.com/blog/pre-commit>
+
+### python
+
+Tool = ruff <https://github.com/astral-sh/ruff#getting-started>
+
+An extremely fast Python linter and formatter, written in Rust.
+
 ## Summary
 
 Using Git Hooks can improve software development in many ways. However, it is important to consider the drawbacks of Git Hooks and implement the hooks properly to avoid security risks.
