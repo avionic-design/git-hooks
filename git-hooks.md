@@ -67,6 +67,8 @@ What are the Commit-message types?
 
 ## pre-commit
 
+Git hook scripts are useful for identifying simple issues before submission to code review. We run our hooks on every commit to automatically point out issues in code. By pointing these issues out before code review, this allows a code reviewer to focus on the architecture of a change while not wasting time with trivial style nitpicks.
+
   <https://pre-commit.com/>
 
   A framework for managing and maintaining multi-language pre-commit hooks.
@@ -78,6 +80,9 @@ What are the Commit-message types?
 Tool = ruff <https://github.com/astral-sh/ruff#getting-started>
 
 An extremely fast Python linter and formatter, written in Rust.
+
+To comply with the regulations of the PEP 8 – Style Guide for Python Code
+<https://peps.python.org/pep-0008/#documentation-strings>
 
 ## Summary
 
