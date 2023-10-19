@@ -15,7 +15,6 @@ For more information about Git Hooks, see the Git Hooks: git-hooks.md documentat
 ### Installation & Configuration
 
 * Download hook
-* Make sure filename is **commit-msg**
 * Make chosen file executable using **chmod 755 commit-msg**
 * Put the file into every project you want to use githook for. Destination folder looks like: **your_project/.git/hooks**
 * Alternatively, you can **specify general folder** for git to look for hooks instead of putting them into every project .git/hooks folder.
