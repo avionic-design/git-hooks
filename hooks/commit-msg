@@ -15,7 +15,7 @@ import sys
 
 # Define regular expressions
 commit_types = "(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|wip)"
-conventional_commit_regex = rf"^{commit_types}(\([a-z \-]+\))?!?: .+$"
+conventional_commit_regex = rf"^{commit_types}(\([a-z \-]+\))?!?: .+"
 
 # Get the commit message from the provided file path (passed as an argument)
 try:
