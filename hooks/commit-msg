@@ -7,16 +7,14 @@ Date Modified: 19.10.2023
 Version: 1.0
 
 Description: 
-
-This script is a Git commit message hook that enforces the Conventional Commit standard for commit messages. 
-
+This script is a Git commit message hook that enforces the Conventional Commit standard for commit messages.
 """
 
 import re
 import sys
 
 # Define regular expressions
-commit_types = r"(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|wip)"
+commit_types = "(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test|wip)"
 conventional_commit_regex = rf"^{commit_types}(\([a-z \-]+\))?!?: .+$"
 
 # Get the commit message from the provided file path (passed as an argument)
@@ -30,17 +28,19 @@ except FileNotFoundError:
 if re.match(conventional_commit_regex, commit_message):
     print("\x1b[32mCommit message meets Conventional Commit standards...\x1b[0m")
     sys.exit(0)
-
-# This is not a conventional commit, show an example and link to the spec.
-print("The commit message does not meet the Conventional Commit standard")
-print("An example of a valid message is:")
-print("  feat(login): add the 'remember me' button")
-print("More details at: https://www.conventionalcommits.org/en/v1.0.0/#summary")
-print("***********************************************************************")
-print(f"Here are the list of message types: {commit_types}")
-print("<type>: <subject> max 50 characters, e.g., fix: invalid request for login API")
-print(
-    "<type(<scope>):> <subject> (Max 50 characters) - <scope> is optional, e.g., fix(user): email address is empty on profile API"
-)
-print("***********************************************************************")
-sys.exit(1)
+else:
+    # This is not a conventional commit, show an example and link to the spec.
+    print("The commit message does not meet the Conventional Commit standard")
+    print("An example of a valid message is:")
+    print("  feat(login): add the start button")
+    print("More details at: https://www.conventionalcommits.org/en/v1.0.0/#summary")
+    print("***********************************************************************")
+    print("Here are the list of message types:" + commit_types)
+    print(
+        "type: description (Max 50 characters), e.g., fix: invalid request for login API"
+    )
+    print(
+        "type(scope): description (Max 50 characters) — (scope) is optional, e.g., fix(user): email address is empty on profile API"
+    )
+    print("***********************************************************************")
+    sys.exit(1)
