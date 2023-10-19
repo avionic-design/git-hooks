@@ -46,6 +46,25 @@ Step 1:
 
 - Tests of the Git Hooks!
 
+## commit-msg
+
+Follow and apply the commit-message rules and patterns :
+<https://www.conventionalcommits.org/en/v1.0.0/>
+
+- type: description (Max 50 char)
+- type(scope): description (Max 50 char) — (scope) is optional
+
+What are the Commit-message types?
+
+- feat (new feature)
+- fix (bug fix)
+- refactor (refactoring production code)
+- style (formatting, missing semi colons, etc; no code change)
+- docs (changes to documentation)
+- test (adding or refactoring tests; no production code change)
+- chore (updating grunt tasks etc; no production code change)
+- wip (work in progress commit to be squashed — do not push!)
+
 ## Summary
 
 Using Git Hooks can improve software development in many ways. However, it is important to consider the drawbacks of Git Hooks and implement the hooks properly to avoid security risks.
