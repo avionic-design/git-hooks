@@ -1,0 +1,21 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.1
+    hooks:
+      - id: ruff
+        args: [ --fix, --exit-non-zero-on-fix ]
+  - repo: https://github.com/psf/black
+    rev: 22.8.0
+    hooks:
+      - id: black
+        language_version: python3.10
+  - repo: https://github.com/jumanjihouse/pre-commit-hooks
+    rev: master  # or specific git tag
+    hooks:
+      - id: shellcheck
+      - id: shfmt
+  - repo: https://github.com/bmorcos/pre-commit-hooks-cpp
+    rev: master
+    hooks:
+      - id: clang-format
+      - id: cpplint
