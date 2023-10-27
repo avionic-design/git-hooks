@@ -2,6 +2,16 @@
 
 `Git Hooks` are scripts that run before or after certain events in a Git repository.
 
+![Image](img/git-hooks.png)
+
+## Contents
+
+* [Dependencies](#dependencies)
+* [Why?](#why)
+* [Commit-msg](#commit-msg)
+* [Pre-commit](pre-commit)
+* [Summary](summary)
+  
 ## Dependencies
 
 * [Python 3.*+](http://python.org/downloads)
@@ -12,35 +22,45 @@
 
 The goal is to use Git Hooks to improve software development. To do this, Git Hooks are used to automate the following tasks:
 
-- **Linting:** Running a linter tool to verify compliance with style guidelines.
-- **Formation:** Running a formater tool to verify compliance with style guidelines.
-- **Automatic Testing:** Running unit tests to verify the functionality of the changes.
+* **Linting:** Running a linter tool to verify compliance with style guidelines.
+* **Formation:** Running a formater tool to verify compliance with style guidelines.
+* **Automatic Testing:** Running unit tests to verify the functionality of the changes.
 
 ## Commit-msg
 
 Follow and apply the commit-message rules and patterns :
 <https://www.conventionalcommits.org/en/v1.0.0/>
 
-- type: description (Max 50 char)
-- type(scope): description (Max 50 char) — (scope) is optional
+* type: description (Max 50 char)
+* type(scope): description (Max 50 char) — (scope) is optional
 
 What are the Commit-message types?
 
-- feat (new feature)
-- fix (bug fix)
-- refactor (refactoring production code)
-- style (formatting, missing semi colons, etc; no code change)
-- docs (changes to documentation)
-- test (adding or refactoring tests; no production code change)
-- chore (updating grunt tasks etc; no production code change)
-- wip (work in progress commit to be squashed — do not push!)
+* feat (new feature)
+* fix (bug fix)
+* refactor (refactoring production code)
+* style (formatting, missing semi colons, etc; no code change)
+* docs (changes to documentation)
+* test (adding or refactoring tests; no production code change)
+* chore (change buildtools, dependencies, delete files; no production code change)
+* wip (work in progress commit to be squashed — do not push!)
 
 ### Commit-msg installation
 
-* Download hook <https://github.com/avionic-design/git-hooks/tree/main/hooks>
-* Make chosen file executable using **chmod 755 commit-msg**
-* Put the file into every project you want to use githook for. Destination folder looks like: **your_project/.git/hooks**
-* Git hooks are triggered automatically if they are located in .git directory
+* Download git-hook repo <https://github.com/avionic-design/git-hooks/>
+* Go to the downloaded repo
+
+    ```console
+    cd work/Projects/git-hooks/
+    ```
+
+* Set the directory that is under version control to be your Git hooks directory
+
+    ```console
+    git config --local core.hooksPath hooks
+    ```
+
+* Now git hooks are triggered automatically
 
 ## Pre-commit
 
@@ -56,7 +76,9 @@ Pre-commit is a framework for managing and automating pre-commit hooks. It provi
 
 Installation:
 
-* pip install pre-commit
+```console
+pip install pre-commit
+```
 
 #### Pre-commit for python
 
@@ -71,7 +93,9 @@ Tools:
 
 Installation:
 
-`pip install ruff black`
+```console
+pip install ruff black
+```
 
 #### Pre-commit for bash
 
@@ -86,8 +110,10 @@ Tools:
 
 Installation:
 
+```console
 sudo apt install -y shellcheck
 sudo apt-get -y install shfmt
+```
 
 #### Pre-commit for C
 
@@ -102,12 +128,14 @@ Tools:
 
 Installation:
 
+```console
 pip install cpplint
 sudo apt install clang-format
+```
 
-#### Configuration
+### Configuration
 
-* Download .pre-commit-config.yaml
+* Download .pre-commit-config.yaml <https://github.com/avionic-design/git-hooks/tree/main/config>
 * Place the .pre-commit-config.yaml file in the root directory of your Git project.
   
 ## Summary
