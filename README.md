@@ -48,19 +48,8 @@ What are the Commit-message types?
 ### Commit-msg installation
 
 * Download git-hook repo <https://github.com/avionic-design/git-hooks/>
-* Go to the downloaded repo
-
-    ```console
-    cd work/Projects/git-hooks/
-    ```
-
-* Set the directory that is under version control to be your Git hooks directory
-
-    ```console
-    git config --local core.hooksPath hooks
-    ```
-
-* Now git hooks are triggered automatically
+* To install the hook, you can either create a symlink to it in . git/hooks , or you can simply copy and paste it into the .git/hooks directory whenever the hook is updated.
+* Git hooks are triggered automatically
 
 ## Pre-commit
 
@@ -137,7 +126,10 @@ sudo apt install clang-format
 
 * Download .pre-commit-config.yaml <https://github.com/avionic-design/git-hooks/tree/main/config>
 * Place the .pre-commit-config.yaml file in the root directory of your Git project.
-  
+* 
+```console
+pre-commit install
+```
 ## Summary
 
 Using Git Hooks can improve software development in many ways. However, it is important to consider the drawbacks of Git Hooks and implement the hooks properly to avoid security risks.
