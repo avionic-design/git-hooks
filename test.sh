@@ -4,3 +4,5 @@ while :; do
 	echo Countdown: $n
 	((n++))
 done
+
+echo "done"
