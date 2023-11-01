@@ -6,3 +6,5 @@ while :; do
 done
 
 echo "done"
+
+echo "done doe"
