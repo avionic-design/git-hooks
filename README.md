@@ -44,6 +44,7 @@ What are the Commit-message types?
 * test (adding or refactoring tests; no production code change)
 * chore (change buildtools, dependencies, delete files; no production code change)
 * wip (work in progress commit to be squashed — do not push!)
+* merge (merge branch)
 
 ### Commit-msg installation
 
